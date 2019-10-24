@@ -8,9 +8,16 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 
-import Header from "./header"
-import "./layout.css"
+const LayoutContainer = styled.div`
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -23,7 +30,7 @@ const Layout = ({ children }) => {
     }
   `)
 
-  return <></>
+  return <LayoutContainer>{children}</LayoutContainer>
 }
 
 Layout.propTypes = {
